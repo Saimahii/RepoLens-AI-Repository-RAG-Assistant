@@ -1,0 +1,180 @@
+/* ── MONACO CODE VIEWER MODAL ── */
+.code-viewer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 10, 18, 0.62);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 120;
+  padding: 24px;
+}
+
+.code-viewer-modal {
+  width: min(1080px, 94vw);
+  height: min(780px, 88vh);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: fadeUp 0.18s ease;
+}
+
+.code-viewer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.code-viewer-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+.code-viewer-title svg {
+  width: 15px;
+  height: 15px;
+  stroke: var(--purple);
+  fill: none;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+.code-viewer-path {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.code-viewer-lines {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background: var(--purple-muted);
+  color: var(--purple);
+  font-weight: 500;
+}
+
+.code-viewer-symbol {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.code-viewer-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.code-viewer-lang {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-soft);
+  text-transform: uppercase;
+}
+
+.code-viewer-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 12px;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.code-viewer-btn:hover {
+  border-color: var(--purple-light);
+  color: var(--purple);
+}
+
+.code-viewer-btn.accent {
+  background: var(--purple);
+  border-color: var(--purple);
+  color: #ffffff;
+}
+
+.code-viewer-btn.accent:hover {
+  background: #6D28D9;
+  color: #ffffff;
+}
+
+.code-viewer-btn svg {
+  width: 12px;
+  height: 12px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+}
+
+.code-viewer-close {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-muted);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.code-viewer-close:hover {
+  background: var(--error-bg);
+  border-color: var(--error-border);
+  color: var(--error-text);
+}
+
+.code-viewer-body {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+}
+
+.code-viewer-state {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--text-muted);
+  font-size: 14px;
+  padding: 24px;
+  text-align: center;
+}
+
+.code-viewer-state.error {
+  color: var(--error-text);
+}
+
+/* Monaco line highlight for clicked source chunks */
+.monaco-highlight-line {
+  background: rgba(124, 58, 237, 0.22) !important;
+}
+
+.monaco-highlight-gutter {
+  border-left: 3px solid #8B5CF6 !important;
+}
